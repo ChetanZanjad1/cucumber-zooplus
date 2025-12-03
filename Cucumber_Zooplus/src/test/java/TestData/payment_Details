@@ -4,10 +4,9 @@ cc_holderName = tester card
 CC_MonthExpiry = 03
 CC_MonthYear = 30
 CC_CVV = 737
-URL = https://www.zooplus.pl
+URL = https://www.zooplus.nl
 login_credential_Pass = penguin0!
-payment_method = onlineBankingPl
-
+payment_method = iDeal
 
 adyenCreditCard
 braintreeCreditCard

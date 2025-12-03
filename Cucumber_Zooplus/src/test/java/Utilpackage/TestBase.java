@@ -14,7 +14,7 @@ public class TestBase {
 	 static GetMethodFromFile prop=new GetMethodFromFile();
 	public static WebDriver driver;
 	public static String URL = "https://www.zooplus.ch";
-
+	public static int defaultTimeOutForObjectWait=20; 
 	
 	public static void setUp() throws Exception {
 		System.out.println("BeforeClassSetup");

@@ -17,7 +17,7 @@ import TestData.GetMethodFromFile;
 import Utilpackage.TestBase;
 import Utilpackage.TestUtil;
 
-public class MainActionPage extends TestBase {
+public class MainActionPage extends TestUtil {
 	GetMethodFromFile prop = new GetMethodFromFile();
 
 	@FindBy(xpath = "//button[@id='onetrust-accept-btn-handler']")
@@ -119,11 +119,18 @@ public class MainActionPage extends TestBase {
 	@FindBy(xpath = "//button[@icon='pi pi-arrow-left']")
 	private WebElement twintcancel;
 
-	@FindBy(xpath = "//button[@title='Cancel']")
+	@FindBy(xpath = "//button[@id='backOrCancelButton']")
 	private WebElement dotpay_cancel;
 
-	@FindBy(xpath = "//button[@title='Go back to shop']")
+	@FindBy(xpath = "//button[@id='confirmCancel']")
 	private WebElement dotpay_back_to_shop;
+	
+	@FindBy(xpath = "//button[@id='blik-button primary extended']")
+	private WebElement dotpay_back_to_cancel;
+	
+	@FindBy(xpath = "//button[@type='button']")
+	private WebElement dotpay_back_to_orderpage;
+	
 
 	@FindBy(xpath = "//button[@aria-label='Close']")
 	private WebElement kalrna_cancel;
@@ -479,8 +486,14 @@ WebElement iFrame1 = driver.findElement(By.xpath("(//iframe[@class='js-iframe'])
 			TestUtil.placeorder();
 			TestUtil.clickMethodByJavaScript(placeorder);
 			TestUtil.clickMethodByJavaScript(dotpay_cancel);
+			Thread.sleep(2000);
 			TestUtil.clickMethodByJavaScript(dotpay_back_to_shop);
-
+			Thread.sleep(2000);
+			TestUtil.clickMethodByJavaScript(dotpay_back_to_cancel);
+			//TestUtil.click("dotpay_back_to_cancel");
+			TestUtil.waitUntilElementIsVisible("dotpay_back_to_orderpage");
+			TestUtil.clickMethodByJavaScript(dotpay_back_to_orderpage);
+		
 		} else if (prop.GetXpathFrompaymentDetails("payment_method").equalsIgnoreCase("klarnaLater")) {
 			// obj.waitUntilElementIsVisible(prop.GetXpathFromITxpath("placeorder"));
 			// obj.clickElement(prop.GetXpathFromITxpath("placeorder"));
