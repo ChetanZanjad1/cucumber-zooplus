@@ -8,7 +8,6 @@ URL = https://www.zooplus.pl
 login_credential_Pass = penguin0!
 payment_method = onlineBankingPl
 
-chetan zanjad
 adyenCreditCard
 braintreeCreditCard
 payPal
