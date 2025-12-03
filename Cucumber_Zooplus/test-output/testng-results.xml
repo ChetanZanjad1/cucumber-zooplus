@@ -2,32 +2,50 @@
 <testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
     <line>
+      <![CDATA[Attempting to click via JS..<br />]]>
+    </line>
+    <line>
+      <![CDATA[Waited successfully for element with outerHTML: <button data-zta="SelectedArticleBox__AddToCartButton" id="AddToCartButton" data-hopps="SelectedArticleBox__AddToCartButton" aria-label="Dodaj do koszyka" data-article-id="5294321" data-shop-identifier="1995922" data-variant-id="0" data-quantity="1" type="button" class="z-btn z-btn--cart SelectedArticleBox_actionButton__Lt0d_"><i class="z-btn__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" data-pp-icon="CartFilled"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 2.75C1 2.33579 1.33579 2 1.75 2H2.27029C3.34283 2 4.26626 2.75703 4.4766 3.80874L4.71485 5H20.2676C21.3791 5 22.209 6.02281 21.98 7.11052L20.5682 13.8165C20.3003 15.0891 19.1777 16 17.8772 16H7.63961C6.32874 16 5.20009 15.0747 4.94301 13.7893L3.00573 4.10291C2.93562 3.75234 2.6278 3.5 2.27029 3.5H1.75C1.33579 3.5 1 3.16421 1 2.75ZM6 19C6 17.8954 6.89543 17 8 17C9.10457 17 10 17.8954 10 19C10 20.1046 9.10457 21 8 21C6.89543 21 6 20.1046 6 19ZM15 19C15 17.8954 15.8954 17 17 17C18.1046 17 19 17.8954 19 19C19 20.1046 18.1046 21 17 21C15.8954 21 15 20.1046 15 19Z"></path></svg></i><span class="pp-visually-hidden"><span>Dodaj do koszyka</span></span><span>Dodaj do koszyka</span></button><br />]]>
+    </line>
+    <line>
+      <![CDATA[Clicked successfully on WebElement via JS: <button data-zta="SelectedArticleBox__AddToCartButton" id="AddToCartButton" data-hopps="SelectedArticleBox__AddToCartButton" aria-label="Dodaj do koszyka" data-article-id="5294321" data-shop-identifier="1995922" data-variant-id="0" data-quantity="1" type="button" class="z-btn z-btn--cart z-btn--loading SelectedArticleBox_actionButton__Lt0d_" disabled=""><span>Dodaj do koszyka</span><svg class="z-btn__loading-icon z-loading-icon z-loading-icon--paw" width="44" height="44" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 -2 55 75" preserveAspectRatio="xMidYMid"><g transform="rotate(45, 15, 35)"><path d="M39.041,36.843c2.054,3.234,3.022,4.951,3.022,6.742c0,3.537-2.627,5.252-6.166,5.252c-1.56,0-2.567-0.002-5.112-1.326c0,0-1.649-1.509-5.508-1.354c-3.895-0.154-5.545,1.373-5.545,1.373c-2.545,1.323-3.516,1.309-5.074,1.309c-3.539,0-6.168-1.713-6.168-5.252c0-1.791,0.971-3.506,3.024-6.742c0,0,3.881-6.445,7.244-9.477c2.43-2.188,5.973-2.18,5.973-2.18h1.093v-0.001c0,0,3.698-0.009,5.976,2.181C35.059,30.51,39.041,36.844,39.041,36.843z"></path><path d="M10.211,30.988c2.727-1.259,3.349-5.723,1.388-9.971s-5.761-6.672-8.488-5.414s-3.348,5.723-1.388,9.971C3.684,29.822,7.484,32.245,10.211,30.988z"></path><path d="M16.631,20.878c3.7,0,6.699-4.674,6.699-10.439S20.331,0,16.631,0S9.932,4.674,9.932,10.439S12.931,20.878,16.631,20.878z"></path><path d="M32.206,20.878c3.7,0,6.7-4.674,6.7-10.439S35.906,0,32.206,0s-6.699,4.674-6.699,10.439C25.507,16.204,28.506,20.878,32.206,20.878z"></path><path d="M45.727,15.602c-2.728-1.259-6.527,1.165-8.488,5.414s-1.339,8.713,1.389,9.972c2.728,1.258,6.527-1.166,8.488-5.414S48.455,16.861,45.727,15.602z"></path></g></svg></button><br />]]>
+    </line>
+    <line>
+      <![CDATA[Attempting to click via JS..<br />]]>
+    </line>
+    <line>
+      <![CDATA[Waited successfully for element with outerHTML: <a data-zta="ButtonAnchorUIC" aria-label="Idź do koszyka" href="/checkout/cart" class="z-btn z-btn--cart CartDrawerFooter_button__shFOw">Idź do koszyka</a><br />]]>
+    </line>
+    <line>
+      <![CDATA[Clicked successfully on WebElement via JS<br />]]>
+    </line>
+    <line>
       <![CDATA[waitUntilElementIsVisible: For element with xpath "dotpay_back_to_orderpage"<br />]]>
     </line>
     <line>
       <![CDATA[<div style='color:orange'><b>WARNING:</b><br />Expected condition failed: waiting for visibility of element located by By.xpath: dotpay_back_to_orderpage (tried for 20 second(s) with 500 milliseconds interval)</div><br /><br />]]>
     </line>
   </reporter-output>
-  <suite started-at="2025-12-03T09:42:12Z" name="Default suite" finished-at="2025-12-03T09:43:52Z" duration-ms="100620">
+  <suite started-at="2025-12-03T10:14:05Z" name="Default suite" finished-at="2025-12-03T10:16:01Z" duration-ms="116525">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGRunner@4d1bf319]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-12-03T09:42:12Z" name="Default test" finished-at="2025-12-03T09:43:52Z" duration-ms="100620">
+    <test started-at="2025-12-03T10:14:05Z" name="Default test" finished-at="2025-12-03T10:16:01Z" duration-ms="116525">
       <class name="cucumberOptions.TestNGRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:cucumberOptions.TestNGRunner@4d1bf319]" started-at="2025-12-03T15:12:12Z" name="setUpClass" finished-at="2025-12-03T15:12:12Z" duration-ms="239" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:cucumberOptions.TestNGRunner@4d1bf319]" started-at="2025-12-03T15:44:05Z" name="setUpClass" finished-at="2025-12-03T15:44:05Z" duration-ms="234" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@7c36db44]]>
+                <![CDATA[org.testng.TestRunner@625d9132]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGRunner@4d1bf319]" started-at="2025-12-03T15:12:12Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-03T15:12:17Z" duration-ms="5108" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGRunner@4d1bf319]" started-at="2025-12-03T15:44:05Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-03T15:44:09Z" duration-ms="4377" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -43,7 +61,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGRunner@4d1bf319]" started-at="2025-12-03T15:12:17Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-03T15:12:22Z" duration-ms="4964" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGRunner@4d1bf319]" started-at="2025-12-03T15:44:09Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-03T15:44:14Z" duration-ms="5020" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -59,7 +77,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGRunner@4d1bf319]" started-at="2025-12-03T15:12:22Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-03T15:12:25Z" duration-ms="2804" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGRunner@4d1bf319]" started-at="2025-12-03T15:44:14Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-03T15:44:17Z" duration-ms="2503" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -75,7 +93,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGRunner@4d1bf319]" started-at="2025-12-03T15:12:25Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-03T15:12:28Z" duration-ms="3521" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGRunner@4d1bf319]" started-at="2025-12-03T15:44:17Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-03T15:44:51Z" duration-ms="34525" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -89,9 +107,27 @@
             </param>
           </params>
           <reporter-output>
+            <line>
+              <![CDATA[Attempting to click via JS..<br />]]>
+            </line>
+            <line>
+              <![CDATA[Waited successfully for element with outerHTML: <button data-zta="SelectedArticleBox__AddToCartButton" id="AddToCartButton" data-hopps="SelectedArticleBox__AddToCartButton" aria-label="Dodaj do koszyka" data-article-id="5294321" data-shop-identifier="1995922" data-variant-id="0" data-quantity="1" type="button" class="z-btn z-btn--cart SelectedArticleBox_actionButton__Lt0d_"><i class="z-btn__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" data-pp-icon="CartFilled"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 2.75C1 2.33579 1.33579 2 1.75 2H2.27029C3.34283 2 4.26626 2.75703 4.4766 3.80874L4.71485 5H20.2676C21.3791 5 22.209 6.02281 21.98 7.11052L20.5682 13.8165C20.3003 15.0891 19.1777 16 17.8772 16H7.63961C6.32874 16 5.20009 15.0747 4.94301 13.7893L3.00573 4.10291C2.93562 3.75234 2.6278 3.5 2.27029 3.5H1.75C1.33579 3.5 1 3.16421 1 2.75ZM6 19C6 17.8954 6.89543 17 8 17C9.10457 17 10 17.8954 10 19C10 20.1046 9.10457 21 8 21C6.89543 21 6 20.1046 6 19ZM15 19C15 17.8954 15.8954 17 17 17C18.1046 17 19 17.8954 19 19C19 20.1046 18.1046 21 17 21C15.8954 21 15 20.1046 15 19Z"></path></svg></i><span class="pp-visually-hidden"><span>Dodaj do koszyka</span></span><span>Dodaj do koszyka</span></button><br />]]>
+            </line>
+            <line>
+              <![CDATA[Clicked successfully on WebElement via JS: <button data-zta="SelectedArticleBox__AddToCartButton" id="AddToCartButton" data-hopps="SelectedArticleBox__AddToCartButton" aria-label="Dodaj do koszyka" data-article-id="5294321" data-shop-identifier="1995922" data-variant-id="0" data-quantity="1" type="button" class="z-btn z-btn--cart z-btn--loading SelectedArticleBox_actionButton__Lt0d_" disabled=""><span>Dodaj do koszyka</span><svg class="z-btn__loading-icon z-loading-icon z-loading-icon--paw" width="44" height="44" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 -2 55 75" preserveAspectRatio="xMidYMid"><g transform="rotate(45, 15, 35)"><path d="M39.041,36.843c2.054,3.234,3.022,4.951,3.022,6.742c0,3.537-2.627,5.252-6.166,5.252c-1.56,0-2.567-0.002-5.112-1.326c0,0-1.649-1.509-5.508-1.354c-3.895-0.154-5.545,1.373-5.545,1.373c-2.545,1.323-3.516,1.309-5.074,1.309c-3.539,0-6.168-1.713-6.168-5.252c0-1.791,0.971-3.506,3.024-6.742c0,0,3.881-6.445,7.244-9.477c2.43-2.188,5.973-2.18,5.973-2.18h1.093v-0.001c0,0,3.698-0.009,5.976,2.181C35.059,30.51,39.041,36.844,39.041,36.843z"></path><path d="M10.211,30.988c2.727-1.259,3.349-5.723,1.388-9.971s-5.761-6.672-8.488-5.414s-3.348,5.723-1.388,9.971C3.684,29.822,7.484,32.245,10.211,30.988z"></path><path d="M16.631,20.878c3.7,0,6.699-4.674,6.699-10.439S20.331,0,16.631,0S9.932,4.674,9.932,10.439S12.931,20.878,16.631,20.878z"></path><path d="M32.206,20.878c3.7,0,6.7-4.674,6.7-10.439S35.906,0,32.206,0s-6.699,4.674-6.699,10.439C25.507,16.204,28.506,20.878,32.206,20.878z"></path><path d="M45.727,15.602c-2.728-1.259-6.527,1.165-8.488,5.414s-1.339,8.713,1.389,9.972c2.728,1.258,6.527-1.166,8.488-5.414S48.455,16.861,45.727,15.602z"></path></g></svg></button><br />]]>
+            </line>
+            <line>
+              <![CDATA[Attempting to click via JS..<br />]]>
+            </line>
+            <line>
+              <![CDATA[Waited successfully for element with outerHTML: <a data-zta="ButtonAnchorUIC" aria-label="Idź do koszyka" href="/checkout/cart" class="z-btn z-btn--cart CartDrawerFooter_button__shFOw">Idź do koszyka</a><br />]]>
+            </line>
+            <line>
+              <![CDATA[Clicked successfully on WebElement via JS<br />]]>
+            </line>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGRunner@4d1bf319]" started-at="2025-12-03T15:12:28Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-03T15:12:34Z" duration-ms="5136" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGRunner@4d1bf319]" started-at="2025-12-03T15:44:51Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-03T15:44:56Z" duration-ms="4463" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -107,7 +143,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGRunner@4d1bf319]" started-at="2025-12-03T15:12:34Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-03T15:12:43Z" duration-ms="9363" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGRunner@4d1bf319]" started-at="2025-12-03T15:44:56Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-03T15:45:05Z" duration-ms="9391" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -123,7 +159,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGRunner@4d1bf319]" started-at="2025-12-03T15:12:43Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-03T15:13:01Z" duration-ms="18153" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGRunner@4d1bf319]" started-at="2025-12-03T15:45:05Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-03T15:45:11Z" duration-ms="5831" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -139,7 +175,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGRunner@4d1bf319]" started-at="2025-12-03T15:13:01Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-03T15:13:52Z" duration-ms="51297" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGRunner@4d1bf319]" started-at="2025-12-03T15:45:11Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-03T15:46:01Z" duration-ms="50147" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -161,7 +197,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:cucumberOptions.TestNGRunner@4d1bf319]" started-at="2025-12-03T15:13:52Z" name="tearDownClass" finished-at="2025-12-03T15:13:52Z" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:cucumberOptions.TestNGRunner@4d1bf319]" started-at="2025-12-03T15:46:01Z" name="tearDownClass" finished-at="2025-12-03T15:46:01Z" duration-ms="5" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

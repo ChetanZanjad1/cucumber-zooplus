@@ -20,6 +20,8 @@ import Utilpackage.TestUtil;
 public class MainActionPage extends TestUtil {
 	GetMethodFromFile prop = new GetMethodFromFile();
 
+	
+
 	@FindBy(xpath = "//button[@id='onetrust-accept-btn-handler']")
 	private WebElement cookiesbanner;
 
@@ -198,15 +200,15 @@ public class MainActionPage extends TestUtil {
 		WebElement randomOption = PDP.get(randomIndex);
 		String selectedOptionText = randomOption.getText();
 		System.out.println("Selected option: " + selectedOptionText);
-		TestUtil.clickMethodByJavaScript(randomOption);
+		TestUtil.clickElementByJS(randomOption);
 	}
 
 	public void add_product_into_cart() throws Exception {
 
 		numberofproduct.click();
-		// TestUtil.clickMethodByJavaScript(numberofproduct);
-		TestUtil.clickMethodByJavaScript(addtocart);
-		TestUtil.clickMethodByJavaScript(checkout);
+		// TestUtil.clickElementByJS(numberofproduct);
+		TestUtil.clickElementByJS(addtocart);
+		TestUtil.clickElementByJS(checkout);
 		Thread.sleep(2000);
 	}
 
@@ -223,7 +225,7 @@ public class MainActionPage extends TestUtil {
 			if (checkout_Proceed.isEnabled()) {
 				// Click the "Proceed" button
 				// checkout_Proceed.click();
-				TestUtil.clickMethodByJavaScript(checkout_Proceed);
+				TestUtil.clickElementByJS(checkout_Proceed);
 				System.out.println("Clicked on Proceed button.");
 				Thread.sleep(2000);
 				break; // Exit the loop once the action is performed
@@ -231,7 +233,7 @@ public class MainActionPage extends TestUtil {
 				// Click the number of products if checkout_Proceed is Disable
 
 				// numberofproduct.click();
-				TestUtil.clickMethodByJavaScript(numberofproduct);
+				TestUtil.clickElementByJS(numberofproduct);
 				Thread.sleep(2000);
 				System.out.println("Clicked on number of products button.");
 			}
@@ -258,14 +260,14 @@ public class MainActionPage extends TestUtil {
 		login_Pass.sendKeys(prop.GetXpathFrompaymentDetails("login_credential_Pass"));
 		Thread.sleep(2000);
 		// login_button.click();
-		TestUtil.clickMethodByJavaScript(login_button);
+		TestUtil.clickElementByJS(login_button);
 		Thread.sleep(5000);
 	}
 
 	public void edit_payment() throws InterruptedException, Exception {
 
 		// Paymentchange.click();
-		TestUtil.clickMethodByJavaScript(Paymentchange);
+		TestUtil.clickElementByJS(Paymentchange);
 		List<WebElement> paymentOption = driver
 				.findElements(By.xpath("//label[contains(@class, 'accordion__label')]"));
 		System.out.println(paymentOption.size());
@@ -281,7 +283,7 @@ public class MainActionPage extends TestUtil {
 		}
 
 
-		// TestUtil.clickMethodByJavaScript(submitepayment);
+		// TestUtil.clickElementByJS(submitepayment);
 	}
 
 	public void place_order(WebDriver driver) throws InterruptedException, Exception {
@@ -310,9 +312,9 @@ public class MainActionPage extends TestUtil {
 			AcardCVV.sendKeys(prop.GetXpathFrompaymentDetails("CC_CVV"));
 			driver.switchTo().defaultContent();
 
-			TestUtil.clickMethodByJavaScript(submitepayment);
+			TestUtil.clickElementByJS(submitepayment);
 			Thread.sleep(5000);
-			TestUtil.clickMethodByJavaScript(placeorder);
+			TestUtil.clickElementByJS(placeorder);
 
 		} else if (prop.GetXpathFrompaymentDetails("payment_method").equalsIgnoreCase("braintreeCreditCard")) {
 			// obj.clickElement(prop.GetXpathFromITxpath("braintreeCreditCard"));
@@ -360,19 +362,19 @@ public class MainActionPage extends TestUtil {
 			// prop.GetXpathFrompaymentDetails("CC_CVV"));
 			driver.switchTo().defaultContent();
 
-			TestUtil.clickMethodByJavaScript(submitepayment);
+			TestUtil.clickElementByJS(submitepayment);
 			Thread.sleep(3000);
 			TestUtil.placeorder();
-			TestUtil.clickMethodByJavaScript(placeorder);
+			TestUtil.clickElementByJS(placeorder);
 		} else if (prop.GetXpathFrompaymentDetails("payment_method").equalsIgnoreCase("PayPal")) {
-            TestUtil.clickMethodByJavaScript(submitepayment);
+            TestUtil.clickElementByJS(submitepayment);
             TestUtil.placeorder();
 			// TestUtil.waitUntilElementIsClickable(paypalSubmite, 20);
             WebElement iFrame = driver.findElement(By.xpath("//iframe[@title='PayPal-paypal']"));
             System.out.println("changing frame" + iFrame);
 			driver.switchTo().frame(iFrame);
 			Thread.sleep(2000); 
-			TestUtil.clickMethodByJavaScript(paypalSubmite);
+			TestUtil.clickElementByJS(paypalSubmite);
 			Thread.sleep(2000);
 			System.out.println("after click");
 			String mainWindow = driver.getWindowHandle();
@@ -392,54 +394,54 @@ public class MainActionPage extends TestUtil {
 		} else if (prop.GetXpathFrompaymentDetails("payment_method").equalsIgnoreCase("ideal")) {
 			// obj.waitUntilElementIsVisible(prop.GetXpathFromITxpath("placeorder"));
 			// obj.clickElement(prop.GetXpathFromITxpath("placeorder"));
-			TestUtil.clickMethodByJavaScript(submitepayment);
-			//TestUtil.clickMethodByJavaScript(placeorder);
+			TestUtil.clickElementByJS(submitepayment);
+			//TestUtil.clickElementByJS(placeorder);
 			TestUtil.placeorder();
 			Thread.sleep(2000);
-			TestUtil.clickMethodByJavaScript(placeorder);
-			TestUtil.clickMethodByJavaScript(IdealCancel);
-			TestUtil.clickMethodByJavaScript(IdealcancelConfirm);
+			TestUtil.clickElementByJS(placeorder);
+			TestUtil.clickElementByJS(IdealCancel);
+			TestUtil.clickElementByJS(IdealcancelConfirm);
 
 		} else if (prop.GetXpathFrompaymentDetails("payment_method").equalsIgnoreCase("prePay")) {
 			// obj.waitUntilElementIsVisible(prop.GetXpathFromITxpath("placeorder"));
 			// obj.clickElement(prop.GetXpathFromITxpath("placeorder"));
-			TestUtil.clickMethodByJavaScript(submitepayment);
-			//TestUtil.clickMethodByJavaScript(placeorder);
+			TestUtil.clickElementByJS(submitepayment);
+			//TestUtil.clickElementByJS(placeorder);
 			TestUtil.placeorder();
-			TestUtil.clickMethodByJavaScript(placeorder);
+			TestUtil.clickElementByJS(placeorder);
 		} else if (prop.GetXpathFrompaymentDetails("payment_method").equalsIgnoreCase("paytrail")) {
 			// obj.waitUntilElementIsVisible(prop.GetXpathFromITxpath("placeorder"));
 			// obj.clickElement(prop.GetXpathFromITxpath("placeorder"));
-			TestUtil.clickMethodByJavaScript(submitepayment);
+			TestUtil.clickElementByJS(submitepayment);
 			TestUtil.placeorder();
-			TestUtil.clickMethodByJavaScript(placeorder);
-			TestUtil.clickMethodByJavaScript(Aktia);
-			TestUtil.clickMethodByJavaScript(popupclose);
-		//	TestUtil.clickMethodByJavaScript(popupcloseconfirm);
+			TestUtil.clickElementByJS(placeorder);
+			TestUtil.clickElementByJS(Aktia);
+			TestUtil.clickElementByJS(popupclose);
+		//	TestUtil.clickElementByJS(popupcloseconfirm);
 
 		} else if (prop.GetXpathFrompaymentDetails("payment_method").equalsIgnoreCase("Rechnugn")) {
 			// obj.waitUntilElementIsVisible(prop.GetXpathFromITxpath("placeorder"));
 			// obj.clickElement(prop.GetXpathFromITxpath("placeorder"));
-			TestUtil.clickMethodByJavaScript(submitepayment);
+			TestUtil.clickElementByJS(submitepayment);
 			TestUtil.placeorder();
-			TestUtil.clickMethodByJavaScript(placeorder);
+			TestUtil.clickElementByJS(placeorder);
 		} else if (prop.GetXpathFrompaymentDetails("payment_method").equalsIgnoreCase("twint")) {
 			// obj.waitUntilElementIsVisible(prop.GetXpathFromITxpath("placeorder"));
 			// obj.waitUntilElementIsClickable(prop.GetXpathFromITxpath("placeorder"), 20);
 			// obj.clickElement(prop.GetXpathFromITxpath("placeorder"));
-			TestUtil.clickMethodByJavaScript(submitepayment);
+			TestUtil.clickElementByJS(submitepayment);
 			TestUtil.placeorder();
-		//	TestUtil.clickMethodByJavaScript(placeorder);
+		//	TestUtil.clickElementByJS(placeorder);
 			Thread.sleep(2000);
-			TestUtil.clickMethodByJavaScript(placeorder);
-			TestUtil.clickMethodByJavaScript(twintcancel);
+			TestUtil.clickElementByJS(placeorder);
+			TestUtil.clickElementByJS(twintcancel);
 
 		} else if (prop.GetXpathFrompaymentDetails("payment_method").equalsIgnoreCase("cd")) {
 			// obj.waitUntilElementIsVisible(prop.GetXpathFromITxpath("placeorder"));
 			// obj.clickElement(prop.GetXpathFromITxpath("placeorder"));
-			TestUtil.clickMethodByJavaScript(submitepayment);
+			TestUtil.clickElementByJS(submitepayment);
 			TestUtil.placeorder();
-			TestUtil.clickMethodByJavaScript(placeorder);
+			TestUtil.clickElementByJS(placeorder);
 		} else if (prop.GetXpathFrompaymentDetails("payment_method").equalsIgnoreCase("bancontact")) {
 
 			// obj.clickElement(prop.GetXpathFromITxpath("bancontactcard"));
@@ -478,31 +480,31 @@ WebElement iFrame1 = driver.findElement(By.xpath("(//iframe[@class='js-iframe'])
 			y.sendKeys(Keys.ENTER).perform();
 			driver.switchTo().defaultContent();
 
-			TestUtil.clickMethodByJavaScript(submitepayment);
+			TestUtil.clickElementByJS(submitepayment);
 
 		} else if (prop.GetXpathFrompaymentDetails("payment_method").equalsIgnoreCase("onlineBankingPl")) {
 			// obj.waitUntilElementIsVisible(prop.GetXpathFromITxpath("placeorder"));
-			TestUtil.clickMethodByJavaScript(submitepayment);
+			TestUtil.clickElementByJS(submitepayment);
 			TestUtil.placeorder();
-			TestUtil.clickMethodByJavaScript(placeorder);
-			TestUtil.clickMethodByJavaScript(dotpay_cancel);
+			TestUtil.clickElementByJS(placeorder);
+			TestUtil.clickElementByJS(dotpay_cancel);
 			Thread.sleep(2000);
-			TestUtil.clickMethodByJavaScript(dotpay_back_to_shop);
+			TestUtil.clickElementByJS(dotpay_back_to_shop);
 			Thread.sleep(2000);
-			TestUtil.clickMethodByJavaScript(dotpay_back_to_cancel);
+			TestUtil.clickElementByJS(dotpay_back_to_cancel);
 			//TestUtil.click("dotpay_back_to_cancel");
 			TestUtil.waitUntilElementIsVisible("dotpay_back_to_orderpage");
-			TestUtil.clickMethodByJavaScript(dotpay_back_to_orderpage);
+			TestUtil.clickElementByJS(dotpay_back_to_orderpage);
 		
 		} else if (prop.GetXpathFrompaymentDetails("payment_method").equalsIgnoreCase("klarnaLater")) {
 			// obj.waitUntilElementIsVisible(prop.GetXpathFromITxpath("placeorder"));
 			// obj.clickElement(prop.GetXpathFromITxpath("placeorder"));
-			TestUtil.clickMethodByJavaScript(submitepayment);
+			TestUtil.clickElementByJS(submitepayment);
 			
-			//TestUtil.clickMethodByJavaScript(submitepayment);
+			//TestUtil.clickElementByJS(submitepayment);
 			
 			TestUtil.placeorder();
-			// TestUtil.clickMethodByJavaScript(placeorder);
+			// TestUtil.clickElementByJS(placeorder);
 			/*
 			 * WebElement checkbox =
 			 * driver.findElement(By.xpath("//input[@data-zta='checkboxInput']")); if
@@ -510,25 +512,25 @@ WebElement iFrame1 = driver.findElement(By.xpath("(//iframe[@class='js-iframe'])
 			 * System.out.println("Check box available on preview page"); } else {
 			 * System.out.println("Check box not available on preview page"); }
 			 */
-			TestUtil.clickMethodByJavaScript(placeorder);
+			TestUtil.clickElementByJS(placeorder);
 			 
 			
-			TestUtil.clickMethodByJavaScript(kalrna_cancel);
-			TestUtil.clickMethodByJavaScript(kalrna_cancel);
-			//TestUtil.clickMethodByJavaScript(kalrna_last_cancel);
+			TestUtil.clickElementByJS(kalrna_cancel);
+			TestUtil.clickElementByJS(kalrna_cancel);
+			//TestUtil.clickElementByJS(kalrna_last_cancel);
 
 		} else if (prop.GetXpathFrompaymentDetails("payment_method").equalsIgnoreCase("klarnaOvertime")) {
 			// obj.waitUntilElementIsVisible(prop.GetXpathFromITxpath("placeorder"));
 			// obj.clickElement(prop.GetXpathFromITxpath("placeorder"));
-			TestUtil.clickMethodByJavaScript(submitepayment);
+			TestUtil.clickElementByJS(submitepayment);
 			TestUtil.placeorder();
-			TestUtil.clickMethodByJavaScript(placeorder);
-			TestUtil.clickMethodByJavaScript(kalrna_cancel);
-			TestUtil.clickMethodByJavaScript(kalrna_last_cancel);
+			TestUtil.clickElementByJS(placeorder);
+			TestUtil.clickElementByJS(kalrna_cancel);
+			TestUtil.clickElementByJS(kalrna_last_cancel);
 
 		} else {
 			// obj.waitUntilElementIsVisible(prop.GetXpathFromITxpath("placeorder"));
-			TestUtil.clickMethodByJavaScript(placeorder);
+			TestUtil.clickElementByJS(placeorder);
 			// obj.waitUntilElementIsVisible(prop.GetXpathFromITxpath("orderno"));
 
 		}

@@ -86,7 +86,7 @@ public static void Reporter__log(String msg, String mode) {
 	System.out.println(msg);
 }
 
-public void clickElementByJS(WebElement element) throws ElementNotLocatedOnUIException {
+public static void clickElementByJS(WebElement element) throws ElementNotLocatedOnUIException {
 	Reporter__log("Attempting to click via JS..");
 	if (waitForObject(element, TestBase.defaultTimeOutForObjectWait)) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -101,7 +101,7 @@ public void clickElementByJS(WebElement element) throws ElementNotLocatedOnUIExc
 
 }
 
-public boolean waitForObject(WebElement element, int timeoutInSec) {
+public static boolean waitForObject(WebElement element, int timeoutInSec) {
 	@SuppressWarnings("deprecation")
 	WebDriverWait wait = new WebDriverWait(driver, timeoutInSec);
 	try {
@@ -122,7 +122,7 @@ public boolean waitForObject(WebElement element, int timeoutInSec) {
 	}
 }
 
-public String getScreenshotPath(WebDriver driver) {
+public static String getScreenshotPath(WebDriver driver) {
 	File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 	String destination = System.getProperty("user.dir") + "\\src\\test\\resources\\ErrorScreenshots\\"
 			+ System.currentTimeMillis() + ".png";
