@@ -1,0 +1,48 @@
+CC_Number= 4111111111111111
+BCC_Number= 4111111111111111
+cc_holderName = tester card
+CC_MonthExpiry = 03
+CC_MonthYear = 30
+CC_CVV = 737
+URL = https://www.zooplus.be
+login_credential_Pass = penguin0!
+payment_method = bancontact
+
+
+adyenCreditCard
+braintreeCreditCard
+payPal
+iDeal
+paytrail
+prePay
+TWINT
+cd
+bancontact
+onlineBankingPl
+klarnaLater
+klarnaOvertime
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
