@@ -1,5 +1,9 @@
 package objectRepo;
 
+import static org.testng.Assert.assertTrue;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
@@ -12,8 +16,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import TestData.GetMethodFromFile;
+import Utilpackage.ElementNotLocatedOnUIException;
 import Utilpackage.TestBase;
 import Utilpackage.TestUtil;
 
@@ -151,21 +157,30 @@ public class MainActionPage extends TestUtil {
 
 	@FindBy(xpath = "//select[@id='bancontactcard.expiryYear']")
 	private WebElement bancontact_card_year;
+	
+	@FindBy(xpath = "//span[@data-zta='orderNumber']")
+	private WebElement orderNumber;
 
 	public MainActionPage() {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void verifyURL() {
+	public void verifyURL() throws FileNotFoundException, IOException {
 		String CurrentURL = driver.getCurrentUrl();
 		System.out.println(CurrentURL);
-		// Assert.assertEquals(CurrentURL, "https://www.zooplus.ch/");
+		
 	}
 
 	public void homepage() throws Exception {
 
-		System.out.println("user navigate to homepage");
+		String CurrentURL = driver.getCurrentUrl();
+	//	Assert.assertEquals(CurrentURL, prop.GetXpathFrompaymentDetails("URL"));
 
+	}
+	
+	public void assertVerificationhomepage() throws FileNotFoundException, IOException {
+		String CurrentURL = driver.getCurrentUrl();
+		//Assert.assertEquals(CurrentURL, prop.GetXpathFrompaymentDetails("URL+/"));
 	}
 
 	public void navivgate_on_plp() throws Exception {
@@ -178,15 +193,20 @@ public class MainActionPage extends TestUtil {
 		for (WebElement all : Alltag) {
 			String print = all.getText();
 			System.out.println(print);
-			if (all.getText().equalsIgnoreCase("Royal Canin Size")) {
+			
+			//if (all.getText().equalsIgnoreCase("Royal Canin Size")) {
+				if (all.getText().contains("Royal Canin")) {
 				all.click();
 				System.out.println("brand selected");
 				break;
 			}
 		}
 	}
-
-	public void navivgate_on_pdp_by_selecting_random_product() {
+	public void assertVerificationPLP() throws FileNotFoundException, IOException {
+		String CurrentURL = driver.getCurrentUrl();
+		Assert.assertTrue(CurrentURL.contains("royal_canin"), "User is not navigated to PLP");
+	}
+	public void navivgate_on_pdp_by_selecting_random_product() throws ElementNotLocatedOnUIException {
 		List<WebElement> PDP = driver.findElements(By.xpath("//a[@data-zta='product-image-anchor']"));
 		System.out.println(PDP.size());
 		for (WebElement all : PDP) {
@@ -265,24 +285,40 @@ public class MainActionPage extends TestUtil {
 	}
 
 	public void edit_payment() throws InterruptedException, Exception {
-
-		// Paymentchange.click();
-		TestUtil.clickElementByJS(Paymentchange);
-		List<WebElement> paymentOption = driver
-				.findElements(By.xpath("//label[contains(@class, 'accordion__label')]"));
-		System.out.println(paymentOption.size());
-		for (WebElement all : paymentOption) {
-			String print = all.getAttribute("for");
-			System.out.println(print);
-			Thread.sleep(2000);
-			if (print.equalsIgnoreCase(prop.GetXpathFrompaymentDetails("payment_method"))) {
-				 all.click();
-				System.out.println("payment method selected" + all );
-				break;
+		
+		if (driver.getCurrentUrl().contains("preview")) {
+			
+				TestUtil.clickElementByJS(Paymentchange);
+				List<WebElement> paymentOption = driver
+						.findElements(By.xpath("//label[contains(@class, 'accordion__label')]"));
+				System.out.println(paymentOption.size());
+				for (WebElement all : paymentOption) {
+					String print = all.getAttribute("for");
+					System.out.println(print);
+					Thread.sleep(2000);
+					if (print.equalsIgnoreCase(prop.GetXpathFrompaymentDetails("payment_method"))) {
+						all.click();
+						System.out.println("payment method selected" + all);
+						break;
+					}
+				}
 			}
-		}
-
-
+			else {
+				List<WebElement> paymentOption = driver
+						.findElements(By.xpath("//label[contains(@class, 'accordion__label')]"));
+				System.out.println(paymentOption.size());
+				for (WebElement all : paymentOption) {
+					String print = all.getAttribute("for");
+					System.out.println(print);
+					Thread.sleep(2000);
+					if (print.equalsIgnoreCase(prop.GetXpathFrompaymentDetails("payment_method"))) {
+						all.click();
+						System.out.println("payment method selected" + all);
+						break;
+					}
+				}
+			}
+		
 		// TestUtil.clickElementByJS(submitepayment);
 	}
 
@@ -313,19 +349,19 @@ public class MainActionPage extends TestUtil {
 			driver.switchTo().defaultContent();
 
 			TestUtil.clickElementByJS(submitepayment);
-			Thread.sleep(5000);
+			//Thread.sleep(5000);
+			TestUtil.placeorder();
 			TestUtil.clickElementByJS(placeorder);
 
 		} else if (prop.GetXpathFrompaymentDetails("payment_method").equalsIgnoreCase("braintreeCreditCard")) {
-			// obj.clickElement(prop.GetXpathFromITxpath("braintreeCreditCard"));
-			WebElement iframeNumber = driver.findElement(By.xpath("//iframe[@id='braintree-hosted-field-number']"));
+			
+			//WebElement iframeNumber = driver.findElement(By.xpath("//iframe[@id='braintree-hosted-field-number']"));
 			driver.switchTo().frame(0);
-			System.out.println("inside ifram umber");
+			System.out.println("inside iframe number");
 			BCardNumber.sendKeys(prop.GetXpathFrompaymentDetails("BCC_Number"));
 			driver.switchTo().defaultContent();
 
-			WebElement iframeName = driver
-					.findElement(By.xpath("//iframe[@id='braintree-hosted-field-cardholderName']"));
+			//WebElement iframeName = driver.findElement(By.xpath("//iframe[@id='braintree-hosted-field-cardholderName']"));
 			driver.switchTo().frame(1);
 			BCardName.sendKeys(prop.GetXpathFrompaymentDetails("cc_holderName"));
 			driver.switchTo().defaultContent();
@@ -363,7 +399,7 @@ public class MainActionPage extends TestUtil {
 			driver.switchTo().defaultContent();
 
 			TestUtil.clickElementByJS(submitepayment);
-			Thread.sleep(3000);
+			//Thread.sleep(3000);
 			TestUtil.placeorder();
 			TestUtil.clickElementByJS(placeorder);
 		} else if (prop.GetXpathFrompaymentDetails("payment_method").equalsIgnoreCase("PayPal")) {
@@ -526,7 +562,7 @@ WebElement iFrame1 = driver.findElement(By.xpath("(//iframe[@class='js-iframe'])
 			TestUtil.placeorder();
 			TestUtil.clickElementByJS(placeorder);
 			TestUtil.clickElementByJS(kalrna_cancel);
-			TestUtil.clickElementByJS(kalrna_last_cancel);
+			//TestUtil.clickElementByJS(kalrna_last_cancel);
 
 		} else {
 			// obj.waitUntilElementIsVisible(prop.GetXpathFromITxpath("placeorder"));
@@ -534,5 +570,10 @@ WebElement iFrame1 = driver.findElement(By.xpath("(//iframe[@class='js-iframe'])
 			// obj.waitUntilElementIsVisible(prop.GetXpathFromITxpath("orderno"));
 
 		}
+	}
+	
+	public void assertVerfification() {
+	//	Assert.assertTrue(orderNumber.isDisplayed(), "Element is not displayed");
+		System.out.println("order number = "+ orderNumber);
 	}
 }

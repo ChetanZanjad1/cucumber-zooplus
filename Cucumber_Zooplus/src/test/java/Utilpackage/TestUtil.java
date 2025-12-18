@@ -21,8 +21,8 @@ import org.testng.Reporter;
 
 public class TestUtil extends TestBase{
 
-	static int PAGE_LOAD_TIMEOUT = 50;
-	static int IMPLICIT_WAIT = 30;
+	static int PAGE_LOAD_TIMEOUT = 20;
+	static int IMPLICIT_WAIT = 20;
 	
 	public static void clickMethodByJavaScript(WebElement Element) {
 		JavascriptExecutor Executor = (JavascriptExecutor) driver;
@@ -30,7 +30,7 @@ public class TestUtil extends TestBase{
 	}
 	
 	public static void waitForElement(WebElement Element1, WebElement Element2) {
-		WebDriverWait wait=new WebDriverWait(driver, 40);
+		WebDriverWait wait=new WebDriverWait(driver, 20);
 		Element2 =wait.until(ExpectedConditions.elementToBeClickable(Element1));
 		Element2.click();
 	}
@@ -124,6 +124,7 @@ public static boolean waitForObject(WebElement element, int timeoutInSec) {
 
 public static String getScreenshotPath(WebDriver driver) {
 	File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+	
 	String destination = System.getProperty("user.dir") + "\\src\\test\\resources\\ErrorScreenshots\\"
 			+ System.currentTimeMillis() + ".png";
 	try {

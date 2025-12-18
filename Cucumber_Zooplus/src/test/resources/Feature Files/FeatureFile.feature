@@ -31,6 +31,7 @@ Feature: Place order
     When user trying to login with valide credential
     Then user sucessfully login
     
+    
      Scenario: user want to change payment method
     Given user is on checkout preview page
     When user trying to change payment method

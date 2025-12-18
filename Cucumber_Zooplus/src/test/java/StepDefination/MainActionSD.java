@@ -1,5 +1,11 @@
 package StepDefination;
 
+import static org.testng.Assert.assertTrue;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import Utilpackage.ElementNotLocatedOnUIException;
 import Utilpackage.TestBase;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -17,12 +23,13 @@ public class MainActionSD extends TestBase {
 		TestBase.setUp();
 	}
 	@When("user is on zooplus dashboard")
-	public void user_is_on_zooplus_dashboard() {
+	public void user_is_on_zooplus_dashboard() throws FileNotFoundException, IOException {
 		MAP.verifyURL();
 	}
 	@Then("user navigate to homepage")
 	public void user_navigate_to_homepage() throws Exception {
-		MAP.homepage();
+		MAP.assertVerificationhomepage();
+		
 	}
 
 	
@@ -35,8 +42,9 @@ public class MainActionSD extends TestBase {
 		MAP.navivgate_on_plp();
 	}
 	@Then("user navigate to PLP")
-	public void user_navigate_to_plp() {
+	public void user_navigate_to_plp() throws FileNotFoundException, IOException {
 		System.out.println("user navigate to PLP");
+		MAP.assertVerificationPLP();
 	}
 
 	
@@ -45,7 +53,7 @@ public class MainActionSD extends TestBase {
 		System.out.println("user is on PLP");
 	}
 	@When("user trying to Navivgate on PDP by selecting random product")
-	public void user_trying_to_navivgate_on_pdp_by_selecting_random_product() {
+	public void user_trying_to_navivgate_on_pdp_by_selecting_random_product() throws ElementNotLocatedOnUIException {
 		MAP.navivgate_on_pdp_by_selecting_random_product();
 	}
 	@Then("user navigate to PDP")
@@ -121,5 +129,6 @@ public class MainActionSD extends TestBase {
     @Then ("user sucessfully place order and navigate to order finish page")
     public void user_sucessfully_place_order_and_navigate_to_order_finish_page() {
     	System.out.println("user sucessfully place order and navigate to order finish page");
+    	MAP.assertVerfification();
     }
 }
