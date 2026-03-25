@@ -403,7 +403,7 @@ public void edit_paymentFeatureFile1(String paymentMethod) throws InterruptedExc
 			//Thread.sleep(5000);
 			TestUtil.placeorder();
 			TestUtil.clickElementByJS(placeorder);
-
+            System.out.println("");
 		} else if (prop.GetXpathFrompaymentDetails("payment_method").equalsIgnoreCase("braintreeCreditCard")) {
 			
 			//WebElement iframeNumber = driver.findElement(By.xpath("//iframe[@id='braintree-hosted-field-number']"));
