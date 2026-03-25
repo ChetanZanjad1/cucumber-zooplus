@@ -175,7 +175,7 @@ public class PageObjetModel extends TestUtil {
 
 		String CurrentURL = driver.getCurrentUrl();
 	//	Assert.assertEquals(CurrentURL, prop.GetXpathFrompaymentDetails("URL"));
-		System.out.println("e346regry745e");
+	
 	}
 	
 	public void assertVerificationhomepage() throws FileNotFoundException, IOException {
