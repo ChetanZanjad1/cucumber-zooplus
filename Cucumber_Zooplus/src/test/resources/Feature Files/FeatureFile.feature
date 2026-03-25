@@ -26,11 +26,10 @@ Feature: Place order
     When user trying to enable proceed button by add product into cart
     Then user can see proceed button enable
     
-    Scenario: user want to login with valide credential
-    Given user is on checkout overview
+   Scenario: user want to login with valide credential
+   Given user is on checkout overview
     When user trying to login with valide credential
     Then user sucessfully login
-    
     
      Scenario: user want to change payment method
     Given user is on checkout preview page

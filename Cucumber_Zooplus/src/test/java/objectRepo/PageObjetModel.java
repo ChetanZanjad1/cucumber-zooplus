@@ -23,7 +23,7 @@ import Utilpackage.ElementNotLocatedOnUIException;
 import Utilpackage.TestBase;
 import Utilpackage.TestUtil;
 
-public class MainActionPage extends TestUtil {
+public class PageObjetModel extends TestUtil {
 	GetMethodFromFile prop = new GetMethodFromFile();
 
 	
@@ -161,7 +161,7 @@ public class MainActionPage extends TestUtil {
 	@FindBy(xpath = "//span[@data-zta='orderNumber']")
 	private WebElement orderNumber;
 
-	public MainActionPage() {
+	public PageObjetModel() {
 		PageFactory.initElements(driver, this);
 	}
 
@@ -284,6 +284,18 @@ public class MainActionPage extends TestUtil {
 		Thread.sleep(5000);
 	}
 
+	public void user_login_with_username_and_password(String username, String password) throws ElementNotLocatedOnUIException, InterruptedException {
+		driver.findElement(By.xpath("//input[@type='email']")).sendKeys(username);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@type='password']")).sendKeys(password);
+		Thread.sleep(2000);
+	  TestUtil.clickElementByJS(login_button);
+	  Thread.sleep(4000);
+	  
+	}
+	
+	
+	
 	public void edit_payment() throws InterruptedException, Exception {
 		
 		if (driver.getCurrentUrl().contains("preview")) {
@@ -314,6 +326,45 @@ public class MainActionPage extends TestUtil {
 					if (print.equalsIgnoreCase(prop.GetXpathFrompaymentDetails("payment_method"))) {
 						all.click();
 						System.out.println("payment method selected" + all);
+						break;
+					}
+				}
+			}
+		
+		// TestUtil.clickElementByJS(submitepayment);
+	}
+	
+	
+public void edit_paymentFeatureFile1(String paymentMethod) throws InterruptedException, Exception {
+		
+		if (driver.getCurrentUrl().contains("preview")) {
+			
+			TestUtil.clickElementByJS(Paymentchange);
+
+			List<WebElement> paymentOption = driver.findElements(By.xpath("//label[contains(@class, 'accordion__label')]"));
+
+			System.out.println("Total payment options: " + paymentOption.size());
+
+			for (WebElement all : paymentOption) {
+				String optionValue = all.getAttribute("for");
+				System.out.println("Found payment option: " + optionValue);
+				if (optionValue.equalsIgnoreCase(paymentMethod)) {
+					all.click();
+					System.out.println("Payment method selected: " + paymentMethod);
+					break;
+				}
+		    }
+				}
+			
+			else {
+				List<WebElement> paymentOption = driver.findElements(By.xpath("//label[contains(@class, 'accordion__label')]"));
+				System.out.println("Total payment options: " + paymentOption.size());
+				for (WebElement all : paymentOption) {
+					String optionValue = all.getAttribute("for");
+					System.out.println("Found payment option: " + optionValue);
+					if (optionValue.equalsIgnoreCase(paymentMethod)) {
+						all.click();
+						System.out.println("Payment method selected: " + paymentMethod);
 						break;
 					}
 				}
@@ -470,6 +521,7 @@ public class MainActionPage extends TestUtil {
 		//	TestUtil.clickElementByJS(placeorder);
 			Thread.sleep(2000);
 			TestUtil.clickElementByJS(placeorder);
+			Thread.sleep(7000);
 			TestUtil.clickElementByJS(twintcancel);
 
 		} else if (prop.GetXpathFrompaymentDetails("payment_method").equalsIgnoreCase("cd")) {
@@ -573,7 +625,7 @@ WebElement iFrame1 = driver.findElement(By.xpath("(//iframe[@class='js-iframe'])
 	}
 	
 	public void assertVerfification() {
-	//	Assert.assertTrue(orderNumber.isDisplayed(), "Element is not displayed");
+		//Assert.assertTrue(orderNumber.isDisplayed(), "Element is not displayed");
 		System.out.println("order number = "+ orderNumber);
 	}
 }

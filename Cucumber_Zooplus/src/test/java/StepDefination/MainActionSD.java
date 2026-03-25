@@ -5,22 +5,25 @@ import static org.testng.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import org.openqa.selenium.By;
+
 import Utilpackage.ElementNotLocatedOnUIException;
 import Utilpackage.TestBase;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import objectRepo.MainActionPage;
+import objectRepo.PageObjetModel;
 
 public class MainActionSD extends TestBase {
 
 	//public static String URL = "https://www.zooplus.fr";
 
-	MainActionPage MAP = new MainActionPage();
+	PageObjetModel MAP = new PageObjetModel();
 
 	@Given("launch browser")
 	public void launch_browser() throws Exception {
 		TestBase.setUp();
+		
 	}
 	@When("user is on zooplus dashboard")
 	public void user_is_on_zooplus_dashboard() throws FileNotFoundException, IOException {
@@ -32,6 +35,19 @@ public class MainActionSD extends TestBase {
 		
 	}
 
+	
+	
+	@Given("launch browser1")
+	public void launch_browser1() throws Exception {
+		TestBase.URLenter();
+		System.out.println("already lauch");
+	}
+	@When("user enters url {string}")
+	public void user_enters_url(String url) {
+	    driver.get(url);
+	    driver.findElement(By.xpath("//button[@id='onetrust-accept-btn-handler']")).click();
+	}
+	
 	
 	@Given("user on homepage")
 	public void user_on_homepage() {
@@ -97,6 +113,13 @@ public class MainActionSD extends TestBase {
 	@When("user trying to login with valide credential")
 	public void user_trying_to_login_with_valide_credential() throws Exception {
 		MAP.login_with_valide_credential();
+		
+	}
+	@When("user login with username {string} and password {string}")
+	public void user_login_with_username_and_password(String username, String password) throws ElementNotLocatedOnUIException, InterruptedException {
+		    
+		MAP.user_login_with_username_and_password(username, password);
+		
 	}
 	@Then("user sucessfully login")
 	public void user_sucessfully_login() {
@@ -112,6 +135,12 @@ public class MainActionSD extends TestBase {
     public void user_trying_to_change_payment_method() throws Exception {
     	MAP.edit_payment();
     }
+    
+    @When("user selects payment method {string}")
+    public void user_selects_payment_method(String paymentMethod) throws Exception {
+        MAP.edit_paymentFeatureFile1(paymentMethod);
+    }
+    
     @Then ("user sucessfully changed payment method")
     public void user_sucessfully_changed_payment_method() {
     	System.out.println("user sucessfully changed payment method");
